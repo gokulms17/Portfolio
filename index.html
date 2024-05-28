@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <style>
+
+        header{
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+            background: black;
+        }
+    .holderCircle {
+        width: 500px;
+        height: 500px;
+        border-radius: 100%;
+        margin: 60px auto;
+        position: relative;
+    }
+    
+    .dotCircle {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        margin: auto;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 100%;
+        z-index: 20;
+    }
+    .itemDot:hover .fa{
+        color: black;
+    }
+    .itemDot.active .fa{
+        color: black;
+    }
+     .fa{
+        color: white;
+    }
+    .dotCircle .itemDot {
+        display: block;
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        background: rgba(255, 255, 255, 0.04);;
+        color: #7d4ac7;
+        border-radius: 20px;
+        text-align: center;
+        line-height: 80px;
+        font-size: 30px;
+        z-index: 3;
+        padding: 0;
+        cursor: pointer;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .dotCircle .itemDot .forActive {
+        width: 56px;
+        height: 56px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: none;
+    }
+    
+    .dotCircle .itemDot .forActive::after {
+        content: '';
+        width: 5px;
+        height: 5px;
+        border: 3px solid #00FF00;
+        bottom: -31px;
+        left: -14px;
+        filter: blur(1px);
+        position: absolute;
+        border-radius: 100%;
+    }
+    
+    .dotCircle .itemDot .forActive::before {
+        content: '';
+        width: 6px;
+        height: 6px;
+        filter: blur(5px);
+        top: -15px;
+        position: absolute;
+        transform: rotate(-45deg);
+        border: 6px solid #00FF00;
+        right: -39px;
+    }
+    
+    .dotCircle .itemDot.active .forActive {
+        display: block;
+    }
+    
+    .round {
+        position: absolute;
+        left: 40px;
+        top: 45px;
+        width: 410px;
+        height: 410px;
+        border: 2px dotted #00FF00;
+        border-radius: 100%;
+        -webkit-animation: rotation 100s infinite linear;
+    }
+    
+    .dotCircle .itemDot:hover,
+    .dotCircle .itemDot.active {
+        color: black;
+        transition: 0.5s;
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7d4ac7+0,a733bb+100 */
+        background: #7d4ac7;
+        /* Old browsers */
+    background-color: rgba(255, 255, 255, 0.8);
+        /* FF3.6-15 */
+        
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#7d4ac7', endColorstr='#a733bb', GradientType=1);
+        /* IE6-9 */
+        border: 2px solid #ffffff;
+        -webkit-box-shadow: 0 30px 30px 0 rgba(0, 0, 0, .13);
+        -moz-box-shadow: 0 30px 30px 0 rgba(0, 0, 0, .13);
+        box-shadow: 0 30px 30px 0 rgba(0, 0, 0, .13);
+    }
+    
+    .dotCircle .itemDot {
+        font-size: 40px;
+    }
+    
+    .contentCircle {
+        width: 250px;
+        border-radius: 100%;
+        color: #222222;
+        position: relative;
+        top: 150px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .contentCircle .CirItem {
+        border-radius: 100%;
+        color: #222222;
+        position: absolute;
+        text-align: center;
+        bottom: 0;
+        left: 0;
+        opacity: 0;
+        transform: scale(0);
+        transition: 0.5s;
+        font-size: 15px;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        margin: auto;
+        line-height: 250px;
+    }
+    
+    .CirItem.active {
+        z-index: 1;
+        opacity: 1;
+        transform: scale(1);
+        transition: 0.5s;
+    }
+    
+    .contentCircle .CirItem i {
+        font-size: 180px;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        margin-left: -90px;
+        color: #000000;
+        opacity: 0.1;
+    }
+    
+    @media only screen and (min-width:300px) and (max-width:599px) {
+        .holderCircle {
+            /* width: 300px; height: 300px;*/
+            margin: 110px auto;
+        }
+        .holderCircle::after {
+            width: 100%;
+            height: 100%;
+        }
+        .dotCircle {
+            width: 100%;
+            height: 100%;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+        }
+    }
+    
+  
+    
+    .title-box .title {
+        font-weight: 600;
+        letter-spacing: 2px;
+        position: relative;
+        z-index: -1;
+    }
+    
+    .title-box span {
+        text-shadow: 0 10px 10px rgba(0, 0, 0, .15);
+        font-weight: 800;
+        color: #00FF00;
+    }
+    
+    .title-box p {
+        font-size: 17px;
+        line-height: 2em;
+    }
+    
+    * {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        color: white;
+        \
+    }
+    
+    h1 {
+        font-size: 60px;
+    }
+    
+    p {
+        line-height: 27px;
+    }
+    
+    body {
+        background: black;
+    }
+    
+    .is-visible {
+        display: block;
+    }
+    
+    .is-hidden {
+        display: none;
+    }
+    
+    .letter:nth-child(1) {
+        transition-delay: 0.015s !important;
+    }
+    
+    .letter:nth-child(2) {
+        transition-delay: 0.030s !important;
+    }
+    
+    .letter:nth-child(3) {
+        transition-delay: 0.045s !important;
+    }
+    
+    .letter:nth-child(4) {
+        transition-delay: 0.060s !important;
+    }
+    
+    .letter:nth-child(5) {
+        transition-delay: 0.075s !important;
+    }
+    
+    .letter:nth-child(6) {
+        transition-delay: 0.090s !important;
+    }
+    
+    .letter:nth-child(7) {
+        transition-delay: 0.120s !important;
+    }
+    
+    .letter:nth-child(8) {
+        transition-delay: 0.150s !important;
+    }
+    
+    .letter:nth-child(9) {
+        transition-delay: 0.180s !important;
+    }
+    
+    .rolling-text .letter {
+        height: 30px;
+    }
+    
+    .rolling-text {
+        overflow: hidden;
+        display: inline-block;
+    }
+    
+    ul {
+        list-style: none;
+    }
+    
+    .rolling-text:hover .letter {
+        transform: translateY(-100%);
+    }
+    
+    .rolling-text .letter {
+        display: inline-block;
+        -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+        transition: -webkit-transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+        -o-transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+        transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+        transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1), -webkit-transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+    }
+    
+    .navbar .navbar-nav .nav-link .block:last-of-type span {
+        color: #00FF00;
+    }
+    
+    .navbar .navbar-nav .nav-link .rolling-text {
+        height: 30px;
+        line-height: 30px;
+    }
+    
+    .bord {
+        padding: 10px 30px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 5px;
+    }
+    
+    .bg {
+        padding: 10px 0;
+        background: rgba(255, 255, 255, 0.04);
+        -webkit-backdrop-filter: blur(2px);
+        backdrop-filter: blur(2px);
+    }
+    
+    .btn:focus:before,
+    .btn:hover:before,
+    .btn.active:before {
+        left: 200px;
+        transition: 2s;
+        animation: shine 2s infinite;
+    }
+    
+    .btn:hover {
+        animation: shine 2s infinite;
+    }
+    
+    .btn {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .btn:before {
+        content: "";
+        position: absolute;
+        width: 100px;
+        height: 100%;
+        background-image: -webkit-linear-gradient(330deg, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0) 70%);
+        background-image: linear-gradient(120deg, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0) 70%);
+        top: 0;
+        left: -200px;
+        opacity: 0.3;
+        transition: 2s;
+    }
+    
+    .gokul {
+        border-radius: 15%;
+    }
+    
+    .buttons .download-cv {
+        background: whitesmoke;
+        transition: 1s;
+    }
+    
+    .buttons .download-cv:hover {
+        background: black;
+        color: white !important;
+        transition: 1s;
+    }
+    
+    .buttons .download-cv:hover span {
+        color: white !important;
+    }
+    
+    .buttons .download-cv span {
+        color: black;
+    }
+    
+    .buttons .btn {
+        padding: 10px 20px;
+    }
+    
+    .buttons .hire {
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    /* Define animation */
+    
+    @keyframes slideInFromTop {
+        0% {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .words-wrapper {
+        display: block;
+    }
+    
+    .words-wrapper b {
+        opacity: 0;
+    }
+    
+    .word {
+        color: #00FF00;
+    }
+    
+    .words-wrapper b.is-visible {
+        opacity: 1;
+        animation: slideInFromTop 1s ease-in-out forwards;
+    }
+    /* about me section */
+    
+    .resume2 .items {
+        padding-left: 50px;
+        position: relative;
+    }
+    
+    .resume2 .items:before {
+        content: '';
+        position: absolute;
+        left: -5px;
+        top: 10px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #00FF00;
+        z-index: 2;
+    }
+    
+    .resume2 .resume-clumn {
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .skills .skill-progress {
+        height: 3px;
+        background-color: rgba(255, 255, 255, 0.1);
+        position: relative;
+        border-radius: 5px;
+    }
+    
+    .skills .skill-progress .progres {
+        position: absolute;
+        height: 100%;
+        width: 0;
+        top: 0;
+        left: 0;
+        background-color: #00FF00;
+        -webkit-transition: all 1.5s;
+        -o-transition: all 1.5s;
+        transition: all 1.5s;
+        border-radius: 5px;
+    }
+    
+    .about-image {
+        position: sticky;
+        top: 88px;
+    }
+    
+    #cursor {
+        position: fixed;
+        width: 20px;
+            z-index: 9999999999;
+        height: 20px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        pointer-events: none;
+        transition: transform 0.5s ease;
+    }
+
+
+    .card {
+
+    box-shadow: 0 0 6px 0 rgba(32, 32, 36, 0.12);
+    transition: all 0.35s ease;
+    background: unset;
+    padding: 20px;
+}
+
+
+.card::before, .card::after
+{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 4px;
+}
+
+.card::before {
+    width: 0;
+    opacity: 0;
+    transition: opacity 0 ease, width 0 ease;
+    transition-delay: 0.5s;
+}
+
+.card::after {
+    width: 0;
+    
+}
+.card .logo {
+    width: 100%;
+    height: 220px;
+    transition: all 0.35s ease;
+    object-fit: cover;
+}
+
+.card h6 {
+    color: #999;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+.card .hover_content {
+    overflow: hidden;
+    max-height: 0;
+    transform: translateY(1em);
+    transition: all 0.55s ease;
+}
+
+.card:hover {
+
+   box-shadow: 0 10px 20px 0 rgba(0, 255, 0, 0.12);
+
+}
+
+
+
+.card:hover::after {
+    width: 100%;
+    opacity: 1;
+    background: #00FF00;
+   transition: opacity 0.8s ease, width 0.8s ease;
+   
+}
+
+.card:hover .logo {
+    margin-bottom: 0.5em;
+}
+
+.card:hover .hover_content {
+    max-height: 10em;
+    transform: none;
+}
+
+.card .hover_content p {
+    margin: 1.5em 0 0;
+    color: #6E6E70;
+    line-height: 1.4em;
+}
+
+
+
+.valign {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.contact .form-group {
+    position: relative;
+}
+
+.contact .form-group label {
+    padding: 5px 10px;
+    background: #0c0c0c;
+    position: absolute;
+    left: 15px;
+    top: -15px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contact input, .contact textarea {
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    background: transparent;
+    color: #fff;
+    padding: 20px;
+    -webkit-transition: all .4s;
+    -o-transition: all .4s;
+    transition: all .4s;
+}
+.contact textarea {
+    min-height: 180px;
+}
+.contact button:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: var(--maincolor);
+    -webkit-transition: all .4s;
+    -o-transition: all .4s;
+    transition: all .4s;
+}
+.contact button .text {
+    position: relative;
+    z-index: 4;
+}
+.contact button {
+    padding: 15px 35px;
+    width: 100%;
+    background: transparent;
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    overflow: hidden;
+    -webkit-transition: all .4s;
+    -o-transition: all .4s;
+    transition: all .4s;
+}
+.contact button:hover:after {
+    width: 100%;
+}
+
+.contact button:hover {
+    color: #1d1d1d;
+}
+.contact button:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: #00FF00;
+    -webkit-transition: all .4s;
+    -o-transition: all .4s;
+    transition: all .4s;
+}
+.contact .info .item {
+    padding: 30px 25px;
+    border-radius: 10px;
+    position: relative;
+    background: #0c0c0c;
+}
+.contact .info .item:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: -webkit-linear-gradient(310deg, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0.04));
+    background: -o-linear-gradient(310deg, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0.04));
+    background: linear-gradient(140deg, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0.04));
+    opacity: 0.3;
+    pointer-events: none;
+    border-radius: 10px;
+}
+.contact .info .item:after {
+    content: '';
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    left: -1px;
+    background: -webkit-linear-gradient(310deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.01));
+    background: -o-linear-gradient(310deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.01));
+    background: linear-gradient(140deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.01));
+    z-index: -1;
+    pointer-events: none;
+    border-radius: 10px;
+}
+
+
+
+
+    </style>
+</head>
+
+<body>
+    <!-- Example anchor tag -->
+    <header>
+        <nav class="navbar navbar-chang navbar-expand-lg">
+            <div class="container d-block">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 col-md-6 order1">
+                        <div class="bord">
+                            <!-- Logo -->
+                            <a class="logo icon-img-70" href="#"> <img src="cool.gif" alt="logo" width="100px" height="50p" style="object-fit: contain;"> </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 order3">
+                        <div class="bg">
+                            <!-- navbar links -->
+                            <div class="full-width">
+                                <ul class="navbar-nav justify-content-center">
+                                    <li class="nav-item"> <a class=" hover-effect nav-link active mx-2" href="#0" data-scroll-nav="0"><span class="rolling-text"><div class="block"><span class="letter">H</span><span class="letter">o</span><span class="letter">m</span><span class="letter">e</span></div><div class="block"><span class="letter">H</span><span class="letter">o</span><span class="letter">m</span><span class="letter">e</span></div></span></a> </li>
+                                    <li class="nav-item"> <a class="nav-link mx-2" href="#0" data-scroll-nav="1"><span class="rolling-text"><div class="block"><span class="letter">A</span><span class="letter">b</span><span class="letter">o</span><span class="letter">u</span><span class="letter">t</span></div><div class="block"><span class="letter">A</span><span class="letter">b</span><span class="letter">o</span><span class="letter">u</span><span class="letter">t</span></div></span></a> </li>
+                                    <li class="nav-item"> <a class="nav-link mx-2" href="#0" data-scroll-nav="2"><span class="rolling-text"><div class="block"><span class="letter">S</span><span class="letter">e</span><span class="letter">r</span><span class="letter">v</span><span class="letter">i</span><span class="letter">c</span><span class="letter">e</span><span class="letter">s</span></div><div class="block"><span class="letter">S</span><span class="letter">e</span><span class="letter">r</span><span class="letter">v</span><span class="letter">i</span><span class="letter">c</span><span class="letter">e</span><span class="letter">s</span></div></span></a> </li>
+                                    <li class="nav-item"> <a class="nav-link mx-2" href="#0" data-scroll-nav="3"><span class="rolling-text"><div class="block"><span class="letter">P</span><span class="letter">o</span><span class="letter">r</span><span class="letter">t</span><span class="letter">f</span><span class="letter">o</span><span class="letter">l</span><span class="letter">i</span><span class="letter">o</span></div><div class="block"><span class="letter">P</span><span class="letter">o</span><span class="letter">r</span><span class="letter">t</span><span class="letter">f</span><span class="letter">o</span><span class="letter">l</span><span class="letter">i</span><span class="letter">o</span></div></span></a> </li>
+                                    <li class="nav-item"> <a class="nav-link mx-2" href="#0" data-scroll-nav="4"><span class="rolling-text"><div class="block"><span class="letter">B</span><span class="letter">l</span><span class="letter">o</span><span class="letter">g</span></div><div class="block"><span class="letter">B</span><span class="letter">l</span><span class="letter">o</span><span class="letter">g</span></div></span></a> </li>
+                                    <li class="nav-item"> <a class="nav-link mx-2" href="#0" data-scroll-nav="5"><span class="rolling-text"><div class="block"><span class="letter">C</span><span class="letter">o</span><span class="letter">n</span><span class="letter">t</span><span class="letter">a</span><span class="letter">c</span><span class="letter">t</span></div><div class="block"><span class="letter">C</span><span class="letter">o</span><span class="letter">n</span><span class="letter">t</span><span class="letter">a</span><span class="letter">c</span><span class="letter">t</span></div></span></a> </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 order2">
+                        <div class="bord d-flex justify-content-end">
+                            <ul class="social d-flex rest m-0">
+                                <li> <a class="mr-3" href="#0"><i class="fa fa-linkedin"></i></a> </li>
+                                <li> <a class="mr-3" href="#0"><i class="fa fa-facebook"></i></a> </li>
+                                <li> <a class="" href="#0"><i class="fa fa-instagram"></i></a> </li>
+                            </ul>
+                            <button class="navbar-toggler" type="button"> <span class="icon-bar"><i class="fa fa-bars"></i></span> </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div id="cursor"></div>
+    <div class="hero-section">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-6">
+                    <h1> <span>Hello, I am </span>
+                  <span class="words-wrapper main-color " >
+                    <b class="word is-visible">Gokul M S</b>
+                    <b class="word is-hidden">Web Developer</b>
+                    <b class="word  is-hidden">UI/UX Designer</b>
+                </span>
+                </h1>
+                    <p class="mt-5"> I've done remote work for agencies, consulted for startups, and collaborated with talented people to create digital products for both business and consumer use. </p>
+                    <div class="mt-5 buttons">
+                        <a href="#0" class="btn download-cv bg"> <span>Dwonload CV</span> </a>
+                        <a href="#0" class="btn bg hire ml-3 click-btn" data-scroll-nav="5"> <span>Hire Me !</span> </a>
+                    </div>
+                </div>
+                <div class="col-md-6 text-right"> <img class="gokul" src="file.png" height="600px" class="object-contain"> </div>
+            </div>
+        </div>
+    </div>
+    <section class="iq-features my-5">
+        <div class="container">
+              <div class="sec-head ">
+                            <div class="sub-title-icon text-center"> <span class="icon pe-7s-note2"></span>
+                                <h3>Services</h3> </div>
+                             </div>
+                        <div>
+            <div class="row align-items-center">
+                <div class="col-lg-3 col-md-12"></div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="holderCircle">
+                        <div class="round"></div>
+                        <div class="dotCircle"> <span class="itemDot active itemDot1" data-tab="1">
+                             <i class="fa fa-clock-o"></i>
+                             <span class="forActive"></span> </span> <span class="itemDot    itemDot2" data-tab="2">
+                            <i class="fa fa-comments"></i>
+                            <span class="forActive"></span> </span> <span class="itemDot    itemDot3" data-tab="3">
+                            <i class="fa fa-user"></i>
+                            <span class="forActive"></span> </span> <span class="itemDot    itemDot4" data-tab="4">
+                            <i class="fa fa-tags"></i>
+                            <span class="forActive"></span> </span> <span class="itemDot     itemDot5" data-tab="5">
+                             <i class="fa fa-upload"></i>
+                            <span class="forActive"></span> </span> <span class="itemDot    itemDot6" data-tab="6">
+                            <i class="fa fa-briefcase"></i>
+                            <span class="forActive"></span> </span>
+                        </div>
+                        <div class="contentCircle">
+                            <div class="CirItem title-box active CirItem1">
+                                <h2 class="title"><span>Automate</span></h2>
+                                <p>tfhdfghfghfghfgjtyjtyhfg ftgfthtyjyutg rthtryjdrhrt tyjdrytyjuty tjtyjtyjtdy</p> <i class="fa fa-clock-o"></i> </div>
+                            <div class="CirItem title-box CirItem2">
+                                <h2 class="title"><span>Chat </span></h2>
+                                <p>tfhdfghfghfghfgjtyjtyhfg ftgfthtyjyutg rthtryjdrhrt tyjdrytyjuty tjtyjtyjtdy</p> <i class="fa fa-comments"></i> </div>
+                            <div class="CirItem title-box CirItem3">
+                                <h2 class="title"><span>Responses</span></h2>
+                                <p>tfhdfghfghfghfgjtyjtyhfg ftgfthtyjyutg rthtryjdrhrt tyjdrytyjuty tjtyjtyjtdy</p> <i class="fa fa-user"></i> </div>
+                            <div class="CirItem title-box CirItem4">
+                                <h2 class="title"><span>Tags</span></h2>
+                                <p>tfhdfghfghfghfgjtyjtyhfg ftgfthtyjyutg rthtryjdrhrt tyjdrytyjuty tjtyjtyjtdy</p> <i class="fa fa-tags"></i> </div>
+                            <div class="CirItem title-box CirItem5">
+                                <h2 class="title"><span>Sharing</span></h2>
+                                <p>tfhdfghfghfghfgjtyjtyhfg ftgfthtyjyutg rthtryjdrhrt tyjdrytyjuty tjtyjtyjtdy</p> <i class="fa fa-upload"></i> </div>
+                            <div class="CirItem title-box CirItem6">
+                                <h2 class="title"><span>Support</span></h2>
+                                <p>tfhdfghfghfghfgjtyjtyhfg ftgfthtyjyutg rthtryjdrhrt tyjdrytyjuty tjtyjtyjtdy</p> <i class="fa fa-briefcase"></i> </div>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </section>
+    <!-- About me section -->
+    <div class="about-me my-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="about-image"> <img src="gokul1.jpg" width="100%"> </div>
+                </div>
+                <div class="col-lg-7">
+                    <!-- resume -->
+                    <div class="resume2 wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
+                        <div class="sec-head ">
+                            <div class="sub-title-icon d-flex align-items-center"> <span class="icon pe-7s-note2"></span>
+                                <h6 class="pb-2">My Resume</h6> </div>
+                            <h3 class="pb-3">Education &amp; Experience</h3> </div>
+                        <div>
+                            <div class="resume-clumn">
+                                <div class="items mb-4">
+                                    <h6 class="date fz-14">2021 - Present</h6>
+                                    <h5>Web Developer</h5>
+                                    <span class="opacity-8 fw-500 mt-10">[ at Envato Market ]</span>
+                                    <p class="fz-13 mt-15">Developing and maintaining websites with a focus on user experience, ensuring that the digital products are both functional and aesthetically pleasing to improve user engagement and satisfaction.</p>
+                                </div>
+                                <div class="items">
+                                    <h6 class="date fz-14">2015 - 2019</h6>
+                                    <h5>Bachelor's Degree in Engineering</h5>
+                                    <span class="opacity-8 fw-500 mt-10">Hindustan College</span>
+                                    <p class="fz-13 mt-15">Completed a Bachelor's Degree in Engineering, providing a solid foundation in engineering principles with a focus on creating user-centric digital solutions.</p>
+                                </div>
+                                <div class="items mb-4">
+                                    <h6 class="date fz-14">2013 - 2015</h6>
+                                    <h5>Completed School</h5>
+                                    <span class="opacity-8 fw-500 mt-10">[ at Ui-Themez ]</span>
+                                    <p class="fz-13 mt-15">Creating engaging digital experiences that focus on user-centered design, aiming to enhance user satisfaction and loyalty through high-quality visual and interactive elements.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- skill bar -->
+                    <div class="skills py-5 wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
+                        <div class="sec-head ">
+                            <div class="sub-title-icon d-flex align-items-center"> <span class="icon pe-7s-gym"></span>
+                                <h6 class="pb-2">My Skills</h6> </div>
+                            <h3 class="pb-3">My Advantages</h3> </div>
+                        <div class="row">
+                            <div class="col-md-6 pb-3">
+                                <div class="">
+                                    <div class="d-flex align-items-center ">
+                                        <div class="">
+                                            <div class="img icon-img-40"> <img src="assets/imgs/resume/s1.png" alt=""> </div>
+                                        </div>
+                                        <div>
+                                            <h6 class="fz-18">UI / UX Design</h6> </div>
+                                    </div>
+                                    <div class="skill-progress"> <span class="progres" data-value="95%" style="width: 0%;"></span> </div> <span class="value">95%</span> </div>
+                            </div>
+                            <div class="col-md-6 pb-3">
+                                <div class="item ">
+                                    <div class="d-flex align-items-center ">
+                                        <div class="mr-30">
+                                            <div class="img icon-img-40"> <img src="assets/imgs/resume/s2.png" alt=""> </div>
+                                        </div>
+                                        <div>
+                                            <h6 class="fz-18">Development</h6> </div>
+                                    </div>
+                                    <div class="skill-progress"> <span class="progres" data-value="90%" style="width: 0%;"></span> </div> <span class="value">90%</span> </div>
+                            </div>
+                            <div class="col-md-6 pb-3">
+                                <div class="item sm-mb30">
+                                    <div class="d-flex align-items-center ">
+                                        <div class="mr-30">
+                                            <div class="img icon-img-40"> <img src="assets/imgs/resume/s3.png" alt=""> </div>
+                                        </div>
+                                        <div>
+                                            <h6 class="fz-18">Graphic Design</h6> </div>
+                                    </div>
+                                    <div class="skill-progress"> <span class="progres" data-value="85%" style="width: 0%;"></span> </div> <span class="value">85%</span> </div>
+                            </div>
+                            <div class="col-md-6 pb-3">
+                                <div class="item">
+                                    <div class="d-flex align-items-center ">
+                                        <div class="mr-30">
+                                            <div class="img icon-img-40"> <img src="assets/imgs/resume/s5.png" alt=""> </div>
+                                        </div>
+                                        <div>
+                                            <h6 class="fz-18">sketch</h6> </div>
+                                    </div>
+                                    <div class="skill-progress"> <span class="progres" data-value="80%" style="width: 0%;"></span> </div> <span class="value">80%</span> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- My blog section -->
+
+
+
+
+
+        <section class="container portfolio my-5 pt-5">
+              <div class="sec-head ">
+                            <div class="sub-title-icon text-center pb-4"> <span class="icon pe-7s-note2"></span>
+                                <h3>Portfolio</h3> </div>
+                            </div>                       
+            <div class="row gap-3">
+              <div class="card col-lg-4">
+                <div class="content">
+                  <img class="logo" src="card.jpg" alt="mparticle">
+                  <h6>Data &amp; Infrastructure Agility</h6>
+                  <div class="hover_content">
+                    <p>mParticle’s customer data platform empowers you to Integrate all of your data and orchestrate it across channels, partners, and systems.</p>
+                  </div>
+                </div>
+              </div>  
+              <div class="card col-lg-4">
+                <div class="content">
+                  <img class="logo" src="card2.jpg" alt="mparticle">
+                  <h6>Data &amp; Infrastructure Agility</h6>
+                  <div class="hover_content">
+                    <p>mParticle’s customer data platform empowers you to Integrate all of your data and orchestrate it across channels, partners, and systems.</p>
+                  </div>
+                </div>
+              </div>      
+              <div class="card col-lg-4">
+                <div class="content">
+                  <img class="logo" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/76882/logo.svg" alt="mparticle">
+                  <h6>Data &amp; Infrastructure Agility</h6>
+                  <div class="hover_content">
+                    <p>mParticle’s customer data platform empowers you to Integrate all of your data and orchestrate it across channels, partners, and systems.</p>
+                  </div>
+                </div>
+              </div> 
+
+              <div class="card col-lg-4">
+                <div class="content">
+                  <img class="logo" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/76882/logo.svg" alt="mparticle">
+                  <h6>Data &amp; Infrastructure Agility</h6>
+                  <div class="hover_content">
+                    <p>mParticle’s customer data platform empowers you to Integrate all of your data and orchestrate it across channels, partners, and systems.</p>
+                  </div>
+                </div>
+              </div> 
+              <div class="card col-lg-4">
+                <div class="content">
+                  <img class="logo" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/76882/logo.svg" alt="mparticle">
+                  <h6>Data &amp; Infrastructure Agility</h6>
+                  <div class="hover_content">
+                    <p>mParticle’s customer data platform empowers you to Integrate all of your data and orchestrate it across channels, partners, and systems.</p>
+                  </div>
+                </div>
+              </div> 
+
+              <div class="card col-lg-4">
+                <div class="content">
+                  <img class="logo" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/76882/logo.svg" alt="mparticle">
+                  <h6>Data &amp; Infrastructure Agility</h6>
+                  <div class="hover_content">
+                    <p>mParticle’s customer data platform empowers you to Integrate all of your data and orchestrate it across channels, partners, and systems.</p>
+                  </div>
+                </div>
+              </div> </div>
+        </section>
+
+<div class="contact-me my-5">
+    <section class="contact section-padding" data-scroll-index="5">
+            <div class="container">
+                <div class="sec-head mb-5 wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8 text-center">
+                            <div class="d-inline-block">
+                                <div class="sub-title-icon d-flex align-items-center">
+                                    <span class="icon pe-7s-map-marker"></span>
+                                    <h6>Contact Us</h6>
+                                </div>
+                            </div>
+                            <h3>Let's Get in Touch!</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-5 valign wow fadeIn" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeIn;">
+                        <div class="info full-width md-mb80">
+                            <div class="item mb-4 d-flex align-items-center">
+                                <div class="mr-4">
+                                    <span class="icon fz-40 main-color pe-7s-call"></span>
+                                </div>
+                                <div class="mr-4">
+                                    <h6 class="opacity-7">Phone</h6>
+                                </div>
+                                <div class="ml-auto">
+                                    <h4>7502858261</h4>
+                                </div>
+                            </div>
+                            <div class="item mb-4 d-flex align-items-center">
+                                <div class="mr-4">
+                                    <span class="icon fz-40 main-color pe-7s-mail"></span>
+                                </div>
+                                <div class="mr-4">
+                                    <h6 class="opacity-7">Email</h6>
+                                </div>
+                                <div class="ml-auto">
+                                    <h4>
+                                        <a href="mailto:abc@example.com">gocoolms17@gmail.com</a>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="item d-flex align-items-center">
+                                <div class="mr-4">
+                                    <span class="icon fz-40 main-color pe-7s-map-marker"></span>
+                                </div>
+                                <div class="mr-4">
+                                    <h6 class="opacity-7">Address</h6>
+                                </div>
+                                <div class="ml-auto">
+                                    <h4>Peravurani, Tanjore</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 valign wow fadeIn" data-wow-delay=".4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeIn;">
+                        <div class="full-width">
+                            <form id="contact-form" method="post" action="contact.php" novalidate="true">
+
+                                <div class="messages"></div>
+
+                                <div class="controls row">
+
+                                    <div class="col-lg-6">
+                                        <div class="form-group mb-5 has-error has-danger">
+                                            <label>Your Name</label>
+                                            <input id="form_name" type="text" name="name" required="required">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                        <div class="form-group mb-5 has-error has-danger">
+                                            <label>Your Email</label>
+                                            <input id="form_email" type="email" name="email" required="required">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label>Your Message</label>
+                                            <textarea id="form_message" name="message" required="required"></textarea>
+                                        </div>
+                                        <div class="mt-30">
+                                            <button type="submit" class="disabled">
+                                                <span class="text">Send A Message</span>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+</div>
+    </div>
+    </div>
+    <script>
+    var words = document.querySelectorAll('.words-wrapper .word');
+    // Function to toggle visibility of words
+    function toggleWords() {
+        var visibleWord = document.querySelector('.words-wrapper .is-visible');
+        var nextWord = visibleWord.nextElementSibling || words[0]; // Get the next word or the first one if it's the last
+        visibleWord.classList.remove('is-visible');
+        visibleWord.classList.add('is-hidden');
+        nextWord.classList.remove('is-hidden');
+        nextWord.classList.add('is-visible');
+    }
+    // Call the function to start the animation and word cycling
+    setInterval(toggleWords, 2000); // Change every 2 seconds
+    document.addEventListener("DOMContentLoaded", function() {
+        var cursor = document.getElementById('cursor');
+        // Get all <a> tags
+        var atags = document.getElementsByTagName('a');
+        // Loop through each <a> tag and add the class
+        for(var i = 0; i < atags.length; i++) {
+            atags[i].classList.add("hover-effect");
+        }
+        document.addEventListener('mousemove', function(e) {
+            // Update cursor position
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+        // Add a hover effect
+        document.querySelectorAll('.hover-effect').forEach(function(el) {
+            el.addEventListener('mouseenter', function() {
+                cursor.style.transform = 'scale(3)';
+            });
+            el.addEventListener('mouseleave', function() {
+                cursor.style.transform = 'scale(1)';
+            });
+        });
+    });
+    // JavaScript code to animate skill bars when in viewport
+    document.addEventListener("DOMContentLoaded", function() {
+        setTimeout(animateSkillBars, 2000);
+    });
+    window.addEventListener("scroll", function() {
+        setTimeout(animateSkillBars, 2000);
+    });
+
+    function animateSkillBars() {
+        const skillBars = document.querySelectorAll('.progres');
+        skillBars.forEach(skillBar => {
+            if(isElementInViewport(skillBar)) {
+                const width = skillBar.dataset.value;
+                skillBar.style.width = width;
+            }
+        });
+    }
+
+    function isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return(rect.top >= 0 && rect.left >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && rect.right <= (window.innerWidth || document.documentElement.clientWidth));
+    }
+
+
+ 
+    let i = 2;
+    $(document).ready(function() {
+        var radius = 200;
+        var fields = $('.itemDot');
+        var container = $('.dotCircle');
+        var width = container.width();
+        radius = width / 2.5;
+        var height = container.height();
+        var angle = 0,
+            step = (2 * Math.PI) / fields.length;
+        fields.each(function() {
+            var x = Math.round(width / 2 + radius * Math.cos(angle) - $(this).width() / 2);
+            var y = Math.round(height / 2 + radius * Math.sin(angle) - $(this).height() / 2);
+            if(window.console) {
+                console.log($(this).text(), x, y);
+            }
+            $(this).css({
+                left: x + 'px',
+                top: y + 'px'
+            });
+            angle += step;
+        });
+        $('.itemDot').click(function() {
+            var dataTab = $(this).data("tab");
+            $('.itemDot').removeClass('active');
+            $(this).addClass('active');
+            $('.CirItem').removeClass('active');
+            $('.CirItem' + dataTab).addClass('active');
+            i = dataTab;
+            $('.dotCircle').css({
+                "transform": "rotate(" + (360 - (i - 1) * 36) + "deg)",
+                "transition": "2s"
+            });
+            $('.itemDot').css({
+                "transform": "rotate(" + ((i - 1) * 36) + "deg)",
+                "transition": "1s"
+            });
+        });
+        setInterval(function() {
+            var dataTab = $('.itemDot.active').data("tab");
+            if(dataTab > 6 || i > 6) {
+                dataTab = 1;
+                i = 1;
+            }
+            $('.itemDot').removeClass('active');
+            $('[data-tab="' + i + '"]').addClass('active');
+            $('.CirItem').removeClass('active');
+            $('.CirItem' + i).addClass('active');
+            i++;
+            $('.dotCircle').css({
+                "transform": "rotate(" + (360 - (i - 2) * 36) + "deg)",
+                "transition": "2s"
+            });
+            $('.itemDot').css({
+                "transform": "rotate(" + ((i - 2) * 36) + "deg)",
+                "transition": "1s"
+            });
+        }, 3000);
+    });
+    </script>
+</body>
+
+</html>
