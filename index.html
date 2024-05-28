@@ -20,6 +20,7 @@
             z-index: 9999;
             background: black;
         }
+
     .holderCircle {
         width: 500px;
         height: 500px;
@@ -189,6 +190,8 @@
         .holderCircle {
             /* width: 300px; height: 300px;*/
             margin: 110px auto;
+            scale: 0.7;
+            left: -73px;
         }
         .holderCircle::after {
             width: 100%;
@@ -695,7 +698,14 @@
     border-radius: 10px;
 }
 
-
+@media only screen and (max-width: 767px){
+    .main-nav{
+            background: black;
+            position: absolute;
+            z-index: 99999;
+            top: 88px;
+        }
+}
 
 
     </style>
@@ -707,13 +717,13 @@
         <nav class="navbar navbar-chang navbar-expand-lg">
             <div class="container d-block">
                 <div class="row align-items-center">
-                    <div class="col-lg-3 col-md-6 order1">
+                    <div class="col-lg-3 col-md-6 w-50">
                         <div class="bord">
                             <!-- Logo -->
                             <a class="logo icon-img-70" href="#"> <img src="cool.gif" alt="logo" width="100px" height="50p" style="object-fit: contain;"> </a>
                         </div>
                     </div>
-                    <div class="col-lg-6 order3">
+                    <div class="col-lg-6 order-3 main-nav order-md-1 d-md-block d-none">
                         <div class="bg">
                             <!-- navbar links -->
                             <div class="full-width">
@@ -728,9 +738,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 order2">
-                        <div class="bord d-flex justify-content-end">
-                            <ul class="social d-flex rest m-0">
+                    <div class="col-lg-3 col-md-6 w-50 order-md-2">
+                        <div class="bord d-flex justify-content-end ">
+                            <ul class="social d-md-flex d-none rest m-0">
                                 <li> <a class="mr-3" href="#0"><i class="fa fa-linkedin"></i></a> </li>
                                 <li> <a class="mr-3" href="#0"><i class="fa fa-facebook"></i></a> </li>
                                 <li> <a class="" href="#0"><i class="fa fa-instagram"></i></a> </li>
@@ -772,7 +782,7 @@
                              </div>
                         <div>
             <div class="row align-items-center">
-                <div class="col-lg-3 col-md-12"></div>
+                <div class="col-lg-3 col-md-12 overflow-hidden"></div>
                 <div class="col-lg-6 col-md-12">
                     <div class="holderCircle">
                         <div class="round"></div>
@@ -1201,6 +1211,16 @@
             });
         }, 3000);
     });
+
+
+
+    $(document).ready(function() {
+            // Add click event listener to navbar-toggler
+            $('.navbar-toggler').click(function() {
+                // Add d-block class to the target element
+                $('.col-lg-6.order-3').toggleClass('d-block');
+            });
+        });
     </script>
 </body>
 
