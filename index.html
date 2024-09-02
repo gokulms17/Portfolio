@@ -20,6 +20,9 @@
             z-index: 9999;
             background: black;
         }
+        html{
+            scroll-behavior: smooth;
+        }
 
     .holderCircle {
         width: 500px;
@@ -730,7 +733,9 @@
             object-fit: contain;
         }
 }
-
+#about, #services, #portfolio, #home, #contact{
+  scroll-margin-top: 100px
+}
 
     </style>
 </head>
@@ -751,13 +756,12 @@
                         <div class="bg">
                             <!-- navbar links -->
                             <div class="full-width">
-                                <ul class="navbar-nav justify-content-center">
-                                    <li class="nav-item"> <a class=" hover-effect nav-link active mx-2" href="#0" data-scroll-nav="0"><span class="rolling-text"><div class="block"><span class="letter">H</span><span class="letter">o</span><span class="letter">m</span><span class="letter">e</span></div><div class="block"><span class="letter">H</span><span class="letter">o</span><span class="letter">m</span><span class="letter">e</span></div></span></a> </li>
-                                    <li class="nav-item"> <a class="nav-link mx-2" href="#0" data-scroll-nav="1"><span class="rolling-text"><div class="block"><span class="letter">A</span><span class="letter">b</span><span class="letter">o</span><span class="letter">u</span><span class="letter">t</span></div><div class="block"><span class="letter">A</span><span class="letter">b</span><span class="letter">o</span><span class="letter">u</span><span class="letter">t</span></div></span></a> </li>
-                                    <li class="nav-item"> <a class="nav-link mx-2" href="#0" data-scroll-nav="2"><span class="rolling-text"><div class="block"><span class="letter">S</span><span class="letter">e</span><span class="letter">r</span><span class="letter">v</span><span class="letter">i</span><span class="letter">c</span><span class="letter">e</span><span class="letter">s</span></div><div class="block"><span class="letter">S</span><span class="letter">e</span><span class="letter">r</span><span class="letter">v</span><span class="letter">i</span><span class="letter">c</span><span class="letter">e</span><span class="letter">s</span></div></span></a> </li>
-                                    <li class="nav-item"> <a class="nav-link mx-2" href="#0" data-scroll-nav="3"><span class="rolling-text"><div class="block"><span class="letter">P</span><span class="letter">o</span><span class="letter">r</span><span class="letter">t</span><span class="letter">f</span><span class="letter">o</span><span class="letter">l</span><span class="letter">i</span><span class="letter">o</span></div><div class="block"><span class="letter">P</span><span class="letter">o</span><span class="letter">r</span><span class="letter">t</span><span class="letter">f</span><span class="letter">o</span><span class="letter">l</span><span class="letter">i</span><span class="letter">o</span></div></span></a> </li>
-                                    <li class="nav-item"> <a class="nav-link mx-2" href="#0" data-scroll-nav="4"><span class="rolling-text"><div class="block"><span class="letter">B</span><span class="letter">l</span><span class="letter">o</span><span class="letter">g</span></div><div class="block"><span class="letter">B</span><span class="letter">l</span><span class="letter">o</span><span class="letter">g</span></div></span></a> </li>
-                                    <li class="nav-item"> <a class="nav-link mx-2" href="#0" data-scroll-nav="5"><span class="rolling-text"><div class="block"><span class="letter">C</span><span class="letter">o</span><span class="letter">n</span><span class="letter">t</span><span class="letter">a</span><span class="letter">c</span><span class="letter">t</span></div><div class="block"><span class="letter">C</span><span class="letter">o</span><span class="letter">n</span><span class="letter">t</span><span class="letter">a</span><span class="letter">c</span><span class="letter">t</span></div></span></a> </li>
+                                <ul class="navbar-nav justify-content-center"> 
+                                    <li class="nav-item"> <a class=" hover-effect nav-link active mx-2" href="#home" data-scroll-nav="0"><span class="rolling-text"><div class="block"><span class="letter">H</span><span class="letter">o</span><span class="letter">m</span><span class="letter">e</span></div><div class="block"><span class="letter">H</span><span class="letter">o</span><span class="letter">m</span><span class="letter">e</span></div></span></a> </li>
+                                    <li class="nav-item"> <a class="nav-link mx-2" href="#about" data-scroll-nav="1"><span class="rolling-text"><div class="block"><span class="letter">A</span><span class="letter">b</span><span class="letter">o</span><span class="letter">u</span><span class="letter">t</span></div><div class="block"><span class="letter">A</span><span class="letter">b</span><span class="letter">o</span><span class="letter">u</span><span class="letter">t</span></div></span></a> </li>
+                                    <li class="nav-item"> <a class="nav-link mx-2" href="#services" data-scroll-nav="2"><span class="rolling-text"><div class="block"><span class="letter">S</span><span class="letter">e</span><span class="letter">r</span><span class="letter">v</span><span class="letter">i</span><span class="letter">c</span><span class="letter">e</span><span class="letter">s</span></div><div class="block"><span class="letter">S</span><span class="letter">e</span><span class="letter">r</span><span class="letter">v</span><span class="letter">i</span><span class="letter">c</span><span class="letter">e</span><span class="letter">s</span></div></span></a> </li>
+                                    <li class="nav-item"> <a class="nav-link mx-2" href="#portfolio" data-scroll-nav="3"><span class="rolling-text"><div class="block"><span class="letter">P</span><span class="letter">o</span><span class="letter">r</span><span class="letter">t</span><span class="letter">f</span><span class="letter">o</span><span class="letter">l</span><span class="letter">i</span><span class="letter">o</span></div><div class="block"><span class="letter">P</span><span class="letter">o</span><span class="letter">r</span><span class="letter">t</span><span class="letter">f</span><span class="letter">o</span><span class="letter">l</span><span class="letter">i</span><span class="letter">o</span></div></span></a> </li>
+                                    <li class="nav-item"> <a class="nav-link mx-2" href="#contact" data-scroll-nav="5"><span class="rolling-text"><div class="block"><span class="letter">C</span><span class="letter">o</span><span class="letter">n</span><span class="letter">t</span><span class="letter">a</span><span class="letter">c</span><span class="letter">t</span></div><div class="block"><span class="letter">C</span><span class="letter">o</span><span class="letter">n</span><span class="letter">t</span><span class="letter">a</span><span class="letter">c</span><span class="letter">t</span></div></span></a> </li>
                                 </ul>
                             </div>
                         </div>
@@ -765,9 +769,9 @@
                     <div class="col-lg-3 col-md-6 w-50 order-md-2">
                         <div class="bord d-flex justify-content-end ">
                             <ul class="social d-md-flex d-none rest m-0">
-                                <li> <a class="mr-3" href="#0"><i class="fa fa-linkedin"></i></a> </li>
-                                <li> <a class="mr-3" href="#0"><i class="fa fa-facebook"></i></a> </li>
-                                <li> <a class="" href="#0"><i class="fa fa-instagram"></i></a> </li>
+                                <li> <a class="mr-3" href="https://www.linkedin.com/in/gokul-m-s-7a63921b4/" target="_blank"><i class="fa fa-linkedin"></i></a> </li>
+                                <li> <a class="mr-3" href="https://wa.me/7502858261" target="_blank"><i class="fa fa-whatsapp"></i></a> </li>
+                                <li> <a class="" href="https://www.instagram.com/gocool_17/" target="_blank"><i class="fa fa-instagram"></i></a> </li>
                             </ul>
                             <button class="navbar-toggler" type="button"> <span class="icon-bar"><i class="fa fa-bars"></i></span> </button>
                         </div>
@@ -777,7 +781,7 @@
         </nav>
     </header>
     <div id="cursor"></div>
-    <div class="hero-section">
+    <div class="hero-section" id="home">
         <div class="container">
             <div class="row align-items-center justify-content-center">
                 <div class="col-md-6">
@@ -790,7 +794,7 @@
                 </h1>
                     <p class="mt-5"> I've done remote work for agencies, consulted for startups, and collaborated with talented people to create digital products for both business and consumer use. </p>
                     <div class="mt-5 buttons">
-                        <a href="#0" class="btn download-cv bg"> <span>Dwonload CV</span> </a>
+                        <a href="gokul_resume.pdf" download class="btn download-cv bg" > <span>Download CV</span> </a>
                         <a href="#0" class="btn bg hire ml-3 click-btn" data-scroll-nav="5"> <span>Hire Me !</span> </a>
                     </div>
                 </div>
@@ -798,7 +802,7 @@
             </div>
         </div>
     </div>
-    <section class="iq-features my-5">
+    <section class="iq-features my-5" id="services">
         <div class="container">
               <div class="sec-head ">
                             <div class="sub-title-icon text-center"> <span class="icon pe-7s-note2"></span>
@@ -864,11 +868,11 @@
         </div>
     </section>
     <!-- About me section -->
-    <div class="about-me my-5">
+    <div class="about-me my-5" id="about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-5">
-                    <div class="about-image"> <img src="gokul1.jpg" width="100%"> </div>
+                    <div class="about-image"> <img src="vp.jpeg" width="100%"> </div>
                 </div>
                 <div class="col-lg-7">
                     <!-- resume -->
@@ -907,59 +911,59 @@
                                 <h6 class="pb-2">My Skills</h6> </div>
                             <h3 class="pb-3">My Advantages</h3> </div>
                        <div class="row">
-    <div class="col-md-6 pb-3">
-        <div class="">
-            <div class="d-flex align-items-center">
-                <div class="">
-                    <div class="img icon-img-40"> <img src="assets/imgs/resume/s1.png" alt=""> </div>
+                    <div class="col-md-6 pb-3">
+                        <div class="">
+                            <div class="d-flex align-items-center">
+                                <div class="">
+                                    <div class="img icon-img-40"> <img src="assets/imgs/resume/s1.png" alt=""> </div>
+                                </div>
+                                <div>
+                                    <h6 class="fz-18">HTML, CSS, JavaScript, jQuery</h6>
+                                </div>
+                            </div>
+                            <div class="skill-progress"> <span class="progres" data-value="95%" style="width: 0%;"></span> </div> <span class="value">95%</span> 
+                        </div>
+                    </div>
+                    <div class="col-md-6 pb-3">
+                        <div class="item">
+                            <div class="d-flex align-items-center">
+                                <div class="mr-30">
+                                    <div class="img icon-img-40"> <img src="assets/imgs/resume/s2.png" alt=""> </div>
+                                </div>
+                                <div>
+                                    <h6 class="fz-18">PHP, MySQL</h6>
+                                </div>
+                            </div>
+                            <div class="skill-progress"> <span class="progres" data-value="90%" style="width: 0%;"></span> </div> <span class="value">90%</span> 
+                        </div>
+                    </div>
+                    <div class="col-md-6 pb-3">
+                        <div class="item sm-mb30">
+                            <div class="d-flex align-items-center">
+                                <div class="mr-30">
+                                    <div class="img icon-img-40"> <img src="assets/imgs/resume/s3.png" alt=""> </div>
+                                </div>
+                                <div>
+                                    <h6 class="fz-18">Bootstrap, Tailwind CSS, React</h6>
+                                </div>
+                            </div>
+                            <div class="skill-progress"> <span class="progres" data-value="85%" style="width: 0%;"></span> </div> <span class="value">85%</span> 
+                        </div>
+                    </div>
+                    <div class="col-md-6 pb-3">
+                        <div class="item">
+                            <div class="d-flex align-items-center">
+                                <div class="mr-30">
+                                    <div class="img icon-img-40"> <img src="assets/imgs/resume/s5.png" alt=""> </div>
+                                </div>
+                                <div>
+                                    <h6 class="fz-18">WordPress, Drupal, Craft CMS</h6>
+                                </div>
+                            </div>
+                            <div class="skill-progress"> <span class="progres" data-value="80%" style="width: 0%;"></span> </div> <span class="value">80%</span> 
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <h6 class="fz-18">HTML, CSS, JavaScript, jQuery</h6>
-                </div>
-            </div>
-            <div class="skill-progress"> <span class="progres" data-value="95%" style="width: 0%;"></span> </div> <span class="value">95%</span> 
-        </div>
-    </div>
-    <div class="col-md-6 pb-3">
-        <div class="item">
-            <div class="d-flex align-items-center">
-                <div class="mr-30">
-                    <div class="img icon-img-40"> <img src="assets/imgs/resume/s2.png" alt=""> </div>
-                </div>
-                <div>
-                    <h6 class="fz-18">PHP, MySQL</h6>
-                </div>
-            </div>
-            <div class="skill-progress"> <span class="progres" data-value="90%" style="width: 0%;"></span> </div> <span class="value">90%</span> 
-        </div>
-    </div>
-    <div class="col-md-6 pb-3">
-        <div class="item sm-mb30">
-            <div class="d-flex align-items-center">
-                <div class="mr-30">
-                    <div class="img icon-img-40"> <img src="assets/imgs/resume/s3.png" alt=""> </div>
-                </div>
-                <div>
-                    <h6 class="fz-18">Bootstrap, Tailwind CSS, React</h6>
-                </div>
-            </div>
-            <div class="skill-progress"> <span class="progres" data-value="85%" style="width: 0%;"></span> </div> <span class="value">85%</span> 
-        </div>
-    </div>
-    <div class="col-md-6 pb-3">
-        <div class="item">
-            <div class="d-flex align-items-center">
-                <div class="mr-30">
-                    <div class="img icon-img-40"> <img src="assets/imgs/resume/s5.png" alt=""> </div>
-                </div>
-                <div>
-                    <h6 class="fz-18">WordPress, Drupal, Craft CMS</h6>
-                </div>
-            </div>
-            <div class="skill-progress"> <span class="progres" data-value="80%" style="width: 0%;"></span> </div> <span class="value">80%</span> 
-        </div>
-    </div>
-</div>
 
                     </div>
                 </div>
@@ -973,7 +977,7 @@
 
 
 
-        <section class="container portfolio my-5 pt-5">
+        <section class="container portfolio my-5 pt-5" id="portfolio">
               <div class="sec-head ">
                             <div class="sub-title-icon text-center pb-4"> <span class="icon pe-7s-note2"></span>
                                 <h3>Portfolio</h3> </div>
@@ -1037,7 +1041,7 @@
               </div> </div>
         </section>
 
-<div class="contact-me my-5">
+<div class="contact-me my-5" id="contact">
     <section class="contact section-padding" data-scroll-index="5">
             <div class="container">
                 <div class="sec-head mb-5 wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
@@ -1055,7 +1059,7 @@
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-lg-6 valign wow fadeIn pb-5" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeIn;">
-                        <div class="info full-width md-mb80">
+                        <div class="info full-width md-mb80 w-100">
                             <div class="item mb-4 d-flex align-items-center">
                                 <div class="mr-4">
                                     <span class="icon fz-40 main-color pe-7s-call"></span>
