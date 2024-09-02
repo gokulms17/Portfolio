@@ -244,6 +244,7 @@
     
     body {
         background: black;
+        overflow-x: hidden;
     }
     
     .is-visible {
@@ -697,13 +698,36 @@
     pointer-events: none;
     border-radius: 10px;
 }
-
+ .contact h4{
+    font-size: 22px;
+}
 @media only screen and (max-width: 767px){
     .main-nav{
             background: black;
             position: absolute;
             z-index: 99999;
             top: 88px;
+        }
+        .contact input{
+            width: 90%;
+        }
+        .contact h4{
+            font-size: 18px;
+        }
+        .rolling-section{
+            margin-top: -150px;
+            margin-bottom: -100px;
+        }
+        .container{
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .contact .info .item{
+            padding: 20px;
+        }
+        .gokul{
+            width: 90%;
+            object-fit: contain;
         }
 }
 
@@ -781,44 +805,57 @@
                                 <h3>Services</h3> </div>
                              </div>
                         <div>
-            <div class="row align-items-center">
+            <div class="row align-items-center rolling-section">
                 <div class="col-lg-3 col-md-12 overflow-hidden"></div>
                 <div class="col-lg-6 col-md-12">
                     <div class="holderCircle">
                         <div class="round"></div>
                         <div class="dotCircle"> <span class="itemDot active itemDot1" data-tab="1">
-                             <i class="fa fa-clock-o"></i>
+                             <i class="fa fa-code"></i>
                              <span class="forActive"></span> </span> <span class="itemDot    itemDot2" data-tab="2">
-                            <i class="fa fa-comments"></i>
+                            <i class="fa fa-database"></i>
                             <span class="forActive"></span> </span> <span class="itemDot    itemDot3" data-tab="3">
-                            <i class="fa fa-user"></i>
+                            <i class="fa fa-th-large"></i>
                             <span class="forActive"></span> </span> <span class="itemDot    itemDot4" data-tab="4">
-                            <i class="fa fa-tags"></i>
+                            <i class="fa fa-cogs"></i>
                             <span class="forActive"></span> </span> <span class="itemDot     itemDot5" data-tab="5">
-                             <i class="fa fa-upload"></i>
+                             <i class="fa fa-github"></i>
                             <span class="forActive"></span> </span> <span class="itemDot    itemDot6" data-tab="6">
-                            <i class="fa fa-briefcase"></i>
+                            <i class="fa fa-server"></i>
                             <span class="forActive"></span> </span>
                         </div>
                         <div class="contentCircle">
-                            <div class="CirItem title-box active CirItem1">
-                                <h2 class="title"><span>Automate</span></h2>
-                                <p>tfhdfghfghfghfgjtyjtyhfg ftgfthtyjyutg rthtryjdrhrt tyjdrytyjuty tjtyjtyjtdy</p> <i class="fa fa-clock-o"></i> </div>
+                           <div class="CirItem title-box active CirItem1">
+                                <h2 class="title"><span>Web Development</span></h2>
+                                <p>HTML, CSS, JavaScript, jQuery</p> 
+                                <i class="fa fa-code"></i> 
+                            </div>
                             <div class="CirItem title-box CirItem2">
-                                <h2 class="title"><span>Chat </span></h2>
-                                <p>tfhdfghfghfghfgjtyjtyhfg ftgfthtyjyutg rthtryjdrhrt tyjdrytyjuty tjtyjtyjtdy</p> <i class="fa fa-comments"></i> </div>
+                                <h2 class="title"><span>Backend Development</span></h2>
+                                <p>PHP, MySQL</p> 
+                                <i class="fa fa-database"></i> 
+                            </div>
                             <div class="CirItem title-box CirItem3">
-                                <h2 class="title"><span>Responses</span></h2>
-                                <p>tfhdfghfghfghfgjtyjtyhfg ftgfthtyjyutg rthtryjdrhrt tyjdrytyjuty tjtyjtyjtdy</p> <i class="fa fa-user"></i> </div>
+                                <h2 class="title"><span>Frameworks & Libraries</span></h2>
+                                <p>Bootstrap, Tailwind CSS, React</p> 
+                                <i class="fa fa-layer-group"></i> 
+                            </div>
                             <div class="CirItem title-box CirItem4">
-                                <h2 class="title"><span>Tags</span></h2>
-                                <p>tfhdfghfghfghfgjtyjtyhfg ftgfthtyjyutg rthtryjdrhrt tyjdrytyjuty tjtyjtyjtdy</p> <i class="fa fa-tags"></i> </div>
+                                <h2 class="title"><span>Content Management Systems</span></h2>
+                                <p>WordPress, Drupal, Craft CMS</p> 
+                                <i class="fa fa-cogs"></i> 
+                            </div>
                             <div class="CirItem title-box CirItem5">
-                                <h2 class="title"><span>Sharing</span></h2>
-                                <p>tfhdfghfghfghfgjtyjtyhfg ftgfthtyjyutg rthtryjdrhrt tyjdrytyjuty tjtyjtyjtdy</p> <i class="fa fa-upload"></i> </div>
+                                <h2 class="title"><span>Version Control</span></h2>
+                                <p>Git</p> 
+                                <i class="fa fa-github"></i> 
+                            </div>
                             <div class="CirItem title-box CirItem6">
-                                <h2 class="title"><span>Support</span></h2>
-                                <p>tfhdfghfghfghfgjtyjtyhfg ftgfthtyjyutg rthtryjdrhrt tyjdrytyjuty tjtyjtyjtdy</p> <i class="fa fa-briefcase"></i> </div>
+                                <h2 class="title"><span>Server</span></h2>
+                                <p>Apache HTTP Server</p> 
+                                <i class="fa fa-server"></i> 
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -838,7 +875,7 @@
                     <div class="resume2 wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
                         <div class="sec-head ">
                             <div class="sub-title-icon d-flex align-items-center"> <span class="icon pe-7s-note2"></span>
-                                <h6 class="pb-2">My Resume</h6> </div>
+                                <h6 class="pb-2 pt-4">My Resume</h6> </div>
                             <h3 class="pb-3">Education &amp; Experience</h3> </div>
                         <div>
                             <div class="resume-clumn">
@@ -869,52 +906,61 @@
                             <div class="sub-title-icon d-flex align-items-center"> <span class="icon pe-7s-gym"></span>
                                 <h6 class="pb-2">My Skills</h6> </div>
                             <h3 class="pb-3">My Advantages</h3> </div>
-                        <div class="row">
-                            <div class="col-md-6 pb-3">
-                                <div class="">
-                                    <div class="d-flex align-items-center ">
-                                        <div class="">
-                                            <div class="img icon-img-40"> <img src="assets/imgs/resume/s1.png" alt=""> </div>
-                                        </div>
-                                        <div>
-                                            <h6 class="fz-18">UI / UX Design</h6> </div>
-                                    </div>
-                                    <div class="skill-progress"> <span class="progres" data-value="95%" style="width: 0%;"></span> </div> <span class="value">95%</span> </div>
-                            </div>
-                            <div class="col-md-6 pb-3">
-                                <div class="item ">
-                                    <div class="d-flex align-items-center ">
-                                        <div class="mr-30">
-                                            <div class="img icon-img-40"> <img src="assets/imgs/resume/s2.png" alt=""> </div>
-                                        </div>
-                                        <div>
-                                            <h6 class="fz-18">Development</h6> </div>
-                                    </div>
-                                    <div class="skill-progress"> <span class="progres" data-value="90%" style="width: 0%;"></span> </div> <span class="value">90%</span> </div>
-                            </div>
-                            <div class="col-md-6 pb-3">
-                                <div class="item sm-mb30">
-                                    <div class="d-flex align-items-center ">
-                                        <div class="mr-30">
-                                            <div class="img icon-img-40"> <img src="assets/imgs/resume/s3.png" alt=""> </div>
-                                        </div>
-                                        <div>
-                                            <h6 class="fz-18">Graphic Design</h6> </div>
-                                    </div>
-                                    <div class="skill-progress"> <span class="progres" data-value="85%" style="width: 0%;"></span> </div> <span class="value">85%</span> </div>
-                            </div>
-                            <div class="col-md-6 pb-3">
-                                <div class="item">
-                                    <div class="d-flex align-items-center ">
-                                        <div class="mr-30">
-                                            <div class="img icon-img-40"> <img src="assets/imgs/resume/s5.png" alt=""> </div>
-                                        </div>
-                                        <div>
-                                            <h6 class="fz-18">sketch</h6> </div>
-                                    </div>
-                                    <div class="skill-progress"> <span class="progres" data-value="80%" style="width: 0%;"></span> </div> <span class="value">80%</span> </div>
-                            </div>
-                        </div>
+                       <div class="row">
+    <div class="col-md-6 pb-3">
+        <div class="">
+            <div class="d-flex align-items-center">
+                <div class="">
+                    <div class="img icon-img-40"> <img src="assets/imgs/resume/s1.png" alt=""> </div>
+                </div>
+                <div>
+                    <h6 class="fz-18">HTML, CSS, JavaScript, jQuery</h6>
+                </div>
+            </div>
+            <div class="skill-progress"> <span class="progres" data-value="95%" style="width: 0%;"></span> </div> <span class="value">95%</span> 
+        </div>
+    </div>
+    <div class="col-md-6 pb-3">
+        <div class="item">
+            <div class="d-flex align-items-center">
+                <div class="mr-30">
+                    <div class="img icon-img-40"> <img src="assets/imgs/resume/s2.png" alt=""> </div>
+                </div>
+                <div>
+                    <h6 class="fz-18">PHP, MySQL</h6>
+                </div>
+            </div>
+            <div class="skill-progress"> <span class="progres" data-value="90%" style="width: 0%;"></span> </div> <span class="value">90%</span> 
+        </div>
+    </div>
+    <div class="col-md-6 pb-3">
+        <div class="item sm-mb30">
+            <div class="d-flex align-items-center">
+                <div class="mr-30">
+                    <div class="img icon-img-40"> <img src="assets/imgs/resume/s3.png" alt=""> </div>
+                </div>
+                <div>
+                    <h6 class="fz-18">Bootstrap, Tailwind CSS, React</h6>
+                </div>
+            </div>
+            <div class="skill-progress"> <span class="progres" data-value="85%" style="width: 0%;"></span> </div> <span class="value">85%</span> 
+        </div>
+    </div>
+    <div class="col-md-6 pb-3">
+        <div class="item">
+            <div class="d-flex align-items-center">
+                <div class="mr-30">
+                    <div class="img icon-img-40"> <img src="assets/imgs/resume/s5.png" alt=""> </div>
+                </div>
+                <div>
+                    <h6 class="fz-18">WordPress, Drupal, Craft CMS</h6>
+                </div>
+            </div>
+            <div class="skill-progress"> <span class="progres" data-value="80%" style="width: 0%;"></span> </div> <span class="value">80%</span> 
+        </div>
+    </div>
+</div>
+
                     </div>
                 </div>
             </div>
@@ -1008,7 +1054,7 @@
                     </div>
                 </div>
                 <div class="row justify-content-center">
-                    <div class="col-lg-5 valign wow fadeIn" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeIn;">
+                    <div class="col-lg-6 valign wow fadeIn pb-5" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeIn;">
                         <div class="info full-width md-mb80">
                             <div class="item mb-4 d-flex align-items-center">
                                 <div class="mr-4">
@@ -1047,7 +1093,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-7 valign wow fadeIn" data-wow-delay=".4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeIn;">
+                    <div class="col-lg-6 valign wow fadeIn" data-wow-delay=".4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeIn;">
                         <div class="full-width">
                             <form id="contact-form" method="post" action="contact.php" novalidate="true">
 
